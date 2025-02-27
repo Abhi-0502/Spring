@@ -1,0 +1,315 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: linear-gradient(120deg, #f4f7fc, #e6ecff);
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #002b5e;
+    font-weight: bold;
+    margin-bottom: 25px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* About Section - Floating Wave Effect */
+.about {
+    padding: 80px 0;
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+    animation: waveMove 5s ease-in-out infinite alternate;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.about-text {
+    width: 50%;
+    font-size: 1.3rem;
+    color: black;
+    opacity: 0;
+    animation: slideInLeft 1s ease-in-out forwards;
+}
+
+.about-image img {
+    width: 90%;
+    height:50%;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    animation: slideInRight 1s ease-in-out forwards;
+}
+
+.about-image img:hover {
+    transform: scale(1.01);
+}
+
+/* General Styles */
+.why-choose, .expertise {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Features and Expertise Grid */
+.features, .expertise-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Feature & Expertise Box */
+.feature, .expertise-item {
+    background: linear-gradient(135deg, rgba(75, 0, 130, 0.9), rgba(138, 43, 226, 0.8));
+    padding: 25px;
+    text-align: center;
+    width: 22%;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+
+    /* Set text color to white */
+    color: white;
+
+    /* Improve readability with slight shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Icons */
+.feature i, .expertise-item i {
+    font-size: 2.5rem;
+    color: #ffeb3b; /* Bright yellow for better visibility */
+    margin-bottom: 12px;
+}
+
+/* Hover Effect */
+.feature:hover, .expertise-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Border Animation */
+.feature::before, .expertise-item::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+   background: linear-gradient(45deg, #7b2cbf, #9d4edd, #c77dff, #ff99c8, #7b2cbf);
+   border-radius: 12px;
+    z-index: -1;
+    animation: borderMove 20s linear infinite;
+}
+
+/* Animated Border Effect */
+@keyframes borderMove {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes waveMove {
+    0% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes rotateGlow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-family: Poppins;
+  color: #f0f0f0;
+}
+body{
+  min-height: 100vh;
+  background: white;
+  color: green;
+  align-content: center;
+}
+h1{
+  color: white;
+}
+.card{
+  margin: 0 auto;
+  padding: 2em;
+  width: 300px;
+  background: #1c1f2b;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after, .card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+
+/* Testimonials Section */
+.testimonials {
+    padding: 80px 0;
+    text-align: center;
+    background: #ffffff;
+    color: #333;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #222;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); /* Soft shadow effect */
+    border: 1px solid #ddd;
+    margin: 10px;
+}
+
+/* Client Image (Box Shape) */
+.testimonial-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;  /* Box shape with slightly rounded edges */
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid #007bff;
+}
+
+/* Testimonial Name */
+.testimonial-name {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #0056b3;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* Responsive - Show 1 Item in Small Screens */
+@media (max-width: 768px) {
+    .carousel-item .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

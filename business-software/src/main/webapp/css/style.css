@@ -1,0 +1,92 @@
+ <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #001f3f; /* Dark Blue */
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            color: #f8c146 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?technology,cloud') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero .btn {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        .hero .btn-primary {
+            background-color: #f8c146;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .hero .btn-primary:hover {
+            background-color: #ff9900;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 20px;
+        }
+
+        .service-box {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .service-box:hover {
+            background-color: #001f3f;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #001f3f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer a {
+            color: #f8c146;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
